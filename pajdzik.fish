@@ -8,3 +8,5 @@ alias @gh __copilot_gh-assist
 alias code code-insiders
 
 fish_ssh_agent
+
+# source ./flexport.fish
