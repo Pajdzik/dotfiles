@@ -2,11 +2,14 @@
 set -e __git_plugin_initialized
 __git.init
 
-alias @ __copilot_what-the-shell
-alias @g __copilot_git-assist
-alias @gh __copilot_gh-assist
+# binary aliases
 alias code code-insiders
 
-fish_ssh_agent
+# shell aliases
+alias cd.. "cd .."
 
-# source ./flexport.fish
+# Navigation
+function ..    ; cd .. ; end
+function ...   ; cd ../.. ; end
+function ....  ; cd ../../.. ; end
+function ..... ; cd ../../../.. ; end
