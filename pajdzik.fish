@@ -2,8 +2,10 @@
 set -e __git_plugin_initialized
 __git.init
 
+fish_add_path "/opt/homebrew/bin/brew"
+
 # binary aliases
-alias code code-insiders
+# alias code code-insiders
 
 # shell aliases
 alias cd.. "cd .."
@@ -13,3 +15,6 @@ function ..    ; cd .. ; end
 function ...   ; cd ../.. ; end
 function ....  ; cd ../../.. ; end
 function ..... ; cd ../../../.. ; end
+
+# Python
+pyenv init - | source
