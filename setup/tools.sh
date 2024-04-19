@@ -12,6 +12,6 @@ echo "Updating Homebrew..."
 brew update
 
 echo "Installing packages..."
-brew install git fish
+brew install git fish fzf
 
 echo "Installation complete."
