@@ -1,60 +1,57 @@
 [user]
-	name = Kamil Pajdzik
-	email = __@__
-
+  name = Kamil Pajdzik
+  email = _@_.com
 [push]
-	default = current
-
+  default = current
 [core]
-	editor = code -n --wait
-	excludesfile = ~/.gitignore_global
-  pager = delta
-    pager = delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"
+  editor = code -n --wait
+  excludesfile = /Users/kpajdzik/.gitignore_global
+  pager = delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"
 
 [interactive]
   diffFilter = delta --color-only --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"
 
 [alias]
-	fnm = "!git fetch +refs/heads/origin/$1:refs/remotes/origin/$1"
-
+  fnm = "!git fetch +refs/heads/origin/$1:refs/remotes/origin/$1"
 [diff]
   colorMoved = default
-	tool = p4merge
-
+  tool = p4merge
 [difftool]
-    keepBackup = false
-    keepTemporaries = false
-    trustExitCode = false
-    prompt = false
-
+  keepBackup = false
+  keepTemporaries = false
+  trustExitCode = false
+  prompt = false
 [difftool "p4mergetool"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
-
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$LOCAL" "$REMOTE"
 [merge]
   conflictstyle = diff3
-	tool = p4merge
-
+  tool = p4merge
 [mergetool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-    keepBackup = false
-    keepTemporaries = false
-    trustExitCode = false
-    prompt = false
-
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+  cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepBackup = false
+  keepTemporaries = false
+  trustExitCode = false
+  prompt = false
+[commit]
+  template = /Users/kpajdzik/.stCommitMsg
+[difftool "sourcetree"]
+  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+  trustExitCode = true
 
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-
+  navigate = true    # use n and N to move between diff sections
 [delta "light-mode"]
   light = true
   syntax-theme = GitHub
-
 [delta "dark-mode"]
   light = false
   syntax-theme = Visual Studio Dark+
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
