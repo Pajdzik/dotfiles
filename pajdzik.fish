@@ -4,6 +4,8 @@ __git.init
 
 fish_add_path "/opt/homebrew/bin/brew"
 
+fzf --fish | source
+
 # binary aliases
 # alias code code-insiders
 
