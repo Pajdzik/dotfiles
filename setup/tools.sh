@@ -18,4 +18,7 @@ brew install fish fzf
 # git related
 brew install git gh git-delta
 
+# programming related
+brew install mise
+
 echo "Installation complete."
